@@ -65,6 +65,9 @@ class GameOverSubstate extends MusicBeatSubstate
 		new FlxTimer().start(1.3, function(tmr:FlxTimer)
 			{
 				bf.playAnim('firstDeath');
+				#if android
+		        addVirtualPad(NONE, A_B);
+		        #end
 				fireAnim.frames = Paths.getSparrowAtlas('fire', 'drowned');
 				fireAnim.animation.addByPrefix('fire','fire',24, true);
 				fireAnim.screenCenter();			
