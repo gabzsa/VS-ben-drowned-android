@@ -118,6 +118,10 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
+#if android
+addVirtualPad(UP_DOWN, A_B);
+#end
+
 		super.create();
 	}
 
@@ -132,13 +136,13 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin)
 			{
-				if (controls.UP_P)
+				if (FlxG.keys.justPressed.UP || FlxG.keys.justPressed.W || controls.UP_P)
 				{
 					changeItem(-1);
 						FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
 				}
 	
-				if (controls.DOWN_P)
+				if (FlxG.keys.justPressed.DOWN || FlxG.keys.justPressed.S || controls.DOWN_P)
 				{
 					changeItem(1);
 						FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
