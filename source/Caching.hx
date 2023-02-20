@@ -89,7 +89,7 @@ class Caching extends MusicBeatState
 
         trace("caching images...");
 
-        for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
+        for (i in HSys.readDirectory("assets/shared/images/characters"))
         {
             if (!i.endsWith(".png"))
                 continue;
@@ -98,7 +98,7 @@ class Caching extends MusicBeatState
 
         trace("caching ben drowned shit...");
 
-        for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/drowned/images")))
+        for (i in HSys.readDirectory("assets/drowned/images"))
             {
                 if (!i.endsWith(".png"))
                     continue;
@@ -107,7 +107,7 @@ class Caching extends MusicBeatState
           
         trace("caching ben drowned characters...");
 
-        for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/drowned/images/characters")))
+        for (i in HSys.readDirectory("assets/drowned/images/characters"))
             {
                 if (!i.endsWith(".png"))
                     continue;
@@ -116,7 +116,7 @@ class Caching extends MusicBeatState
 
         trace("caching music...");
 
-        for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/songs")))
+        for (i in HSys.readDirectory("assets/songs"))
         {
             music.push(i);
         }
